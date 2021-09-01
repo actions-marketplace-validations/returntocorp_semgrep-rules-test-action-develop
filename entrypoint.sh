@@ -53,8 +53,7 @@ function main() {
     >&2 echo "====== BEGIN OUTPUT STDERR ======"
     cat $OUTPUT_STDERR >&2
     >&2 echo "====== END OUTPUT STDERR ======"
-    ## copy the examples tar file into the $PWD
-    cp semgrep_runs_output.tar.gz /github/workspace/semgrep_runs_output.tar.gz
+
     # format string
     OUTPUT_FMT=$(cat $OUTPUT_TEST_STDOUT | sed 's/$/\\n/' | tr -d '\n')
     echo "::set-output name=results::${OUTPUT_FMT}"
